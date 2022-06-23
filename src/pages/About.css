@@ -1,3 +1,13 @@
+@font-face {
+  font-family: ibm-plex-sans;
+  src: url(../assets/IBMPlexSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: ibm-plex-mon;
+  src: url(../assets/IBMPlexMono-Regular.ttf);
+}
+
 .split {
   height: 100%;
   width: 50%;
@@ -26,17 +36,42 @@
 }
 
 .name_title {
-  font-size: 48px;
+  font-size: 3.7em;
   color: black;
   text-align: left;
   padding-bottom: 20px;
+  font-family: "ibm-plex-sans", serif;
+  letter-spacing: 2px;
+  font-weight: 900;
+  line-height: 0.9em;
 }
 
 .brief_description {
   text-align: left;
+  font-family: "ibm-plex-mon", sans-serif;
+  font-size: 1.3em;
+}
+
+.brief_description::after {
+  content: "";
+  width: 1.3px;
+  height: 20px;
+  background: #000;
+  display: inline-block;
+  animation: blink 0.5s steps(2) infinite alternate;
 }
 
 .profile_image {
-  width: 500px;
+  width: 100%;
+  min-width: 300px;
   height: auto;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
